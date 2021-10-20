@@ -1,5 +1,6 @@
 ﻿using Board;
 using System;
+using csharp_chess.Board;
 
 namespace csharp_chess
 {
@@ -7,12 +8,7 @@ namespace csharp_chess
     {
         static void Main(string[] args)
         {
-
-            Position P;
-
-            P = new Position(3, 4);
-
-            Console.WriteLine($"Position: {P}");
+             ChessBoard t = new ChessBoard(8, 8);
 
             Console.ReadLine();
         }

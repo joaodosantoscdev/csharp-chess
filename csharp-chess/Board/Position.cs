@@ -3,17 +3,17 @@
     class Position
     {
         public int Line { get; set; }
-        public int Colunm { get; set; }
+        public int Column { get; set; }
 
-        public Position(int line, int colunm)
+        public Position(int line, int column)
         {
             Line = line;
-            Colunm = colunm;
+            Column = column;
         }
 
         public override string ToString()
         {
-            return Line + ", " + Colunm; 
+            return Line + ", " + Column; 
         }
     }
 }

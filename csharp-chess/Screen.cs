@@ -9,7 +9,7 @@ namespace csharp_chess
         {
             for ( int i = 0; i < brd.Lines; i++ )
             {
-                for ( int j = 0; j < brd.Colunms; j++)
+                for ( int j = 0; j < brd.Columns; j++)
                 {
                     if (brd.Piece(i,j) == null)
                     {

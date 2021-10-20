@@ -9,23 +9,14 @@ namespace csharp_chess
     {
         static void Main(string[] args)
         {
-            try
-            {
-                ChessBoard brd = new ChessBoard(8, 8);
+            ChessPosition pos = new ChessPosition('c', 7);
 
-                brd.PutPiece(new King(brd, Color.Black), new Position(0, 0));
-                brd.PutPiece(new Tower(brd, Color.Black), new Position(1, 9));
-                brd.PutPiece(new King(brd, Color.Black), new Position(0, 2));
+            Console.WriteLine(pos);
 
+            Console.WriteLine(pos.toPosition());
 
-                Screen.PrintBoard(brd);
+            Console.ReadLine();
 
-                Console.ReadLine();
-            }
-            catch (BoardException e)
-            {
-                Console.WriteLine(e.Message);
-            }
 
         }
     }

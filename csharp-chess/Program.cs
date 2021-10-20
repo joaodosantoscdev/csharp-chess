@@ -8,7 +8,9 @@ namespace csharp_chess
     {
         static void Main(string[] args)
         {
-             ChessBoard t = new ChessBoard(8, 8);
+            ChessBoard brd = new ChessBoard(8, 8);
+
+            Screen.PrintBoard(brd);
 
             Console.ReadLine();
         }

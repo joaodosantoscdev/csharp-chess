@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace csharp_chess.Board
+﻿namespace csharp_chess.Board
 {
     class ChessBoard
     {
@@ -17,9 +11,13 @@ namespace csharp_chess.Board
         {
             Lines = lines;
             Colunms = colunms;
-            Pieces = new Piece[Lines, Colunms];
+            Pieces = new Piece[lines, colunms];
         }
 
-        
+        public Piece Piece(int line, int colunm)
+        {
+            return Pieces[line, colunm];
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Board;
+using System;
 
 namespace csharp_chess
 {
@@ -6,7 +7,14 @@ namespace csharp_chess
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Position P;
+
+            P = new Position(3, 4);
+
+            Console.WriteLine($"Position: {P}");
+
+            Console.ReadLine();
         }
     }
 }

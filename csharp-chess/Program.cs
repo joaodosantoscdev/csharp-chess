@@ -9,14 +9,34 @@ namespace csharp_chess
     {
         static void Main(string[] args)
         {
-            ChessPosition pos = new ChessPosition('c', 7);
+            try
+            {
+                ChessMatch match = new ChessMatch();
 
-            Console.WriteLine(pos);
+                while (!match.Finished)
+                {
+                    Console.Clear();
+                    Screen.PrintBoard(match.Brd);
 
-            Console.WriteLine(pos.toPosition());
+                    Console.WriteLine();
+                    Console.Write("Origin :");
+                    Position origin = Screen.ReadChessPosition().toPosition();
+                    Console.Write("Destiny:");
+                    Position destiny = Screen.ReadChessPosition().toPosition();
 
-            Console.ReadLine();
+                    match.ExecuteMove(origin, destiny);
 
+                }
+
+
+                Screen.PrintBoard(match.Brd);
+
+                Console.ReadLine();
+            }
+            catch (BoardException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
         }
     }

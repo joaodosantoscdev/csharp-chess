@@ -9,9 +9,9 @@ namespace csharp_chess.Board
         public int QntyMoves { get; protected set; }
         public ChessBoard Brd { get; protected set; }
 
-        public Piece(Position position, Color color, ChessBoard brd)
+        public Piece(ChessBoard brd, Color color)
         {
-            Position = position;
+            Position = null;
             Color = color;
             Brd = brd;
             QntyMoves = 0;

@@ -12,11 +12,7 @@ namespace csharp_chess
             for (int i = 0; i < brd.Lines; i++)
             {
                 Console.Write(8 - i + " ");
-<<<<<<< HEAD
                 for (int j = 0; j < brd.Columns; j++)
-=======
-                for ( int j = 0; j < brd.Columns; j++)
->>>>>>> main
                 {
                     if (brd.Piece(i, j) == null)
                     {
@@ -24,22 +20,15 @@ namespace csharp_chess
                     }
                     else
                     {
-<<<<<<< HEAD
                         PrintPiece(brd.Piece(i, j));
                         Console.Write(" ");
                     }
-=======
-                       PrintPiece(brd.Piece(i, j));
-                       Console.Write(" ");
-                    }                   
->>>>>>> main
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
         }
 
-<<<<<<< HEAD
         public static ChessPosition ReadChessPosition()
         {
             string s = Console.ReadLine();
@@ -48,8 +37,6 @@ namespace csharp_chess
             return new ChessPosition(column, line);
         }
 
-=======
->>>>>>> main
         public static void PrintPiece(Piece piece)
         {
             if (piece.Color == Color.White)

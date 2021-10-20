@@ -11,7 +11,7 @@ namespace csharp_chess
         {
             try
             {
-<<<<<<< HEAD
+
                 ChessMatch match = new ChessMatch();
 
                 while (!match.Finished)
@@ -31,7 +31,7 @@ namespace csharp_chess
 
 
                 Screen.PrintBoard(match.Brd);
-=======
+
                 ChessBoard brd = new ChessBoard(8, 8);
 
                 brd.PutPiece(new King(brd, Color.Black), new Position(0, 0));
@@ -42,7 +42,7 @@ namespace csharp_chess
 
 
                 Screen.PrintBoard(brd);
->>>>>>> main
+
 
                 Console.ReadLine();
             }

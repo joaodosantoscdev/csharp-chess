@@ -16,5 +16,10 @@ namespace csharp_chess.Board
             Brd = brd;
             QntyMoves = 0;
         }
+
+        public void IncrementQntyMoves()
+        {
+            QntyMoves++;
+        }
     }
 }

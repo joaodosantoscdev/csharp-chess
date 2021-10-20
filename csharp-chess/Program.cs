@@ -11,6 +11,27 @@ namespace csharp_chess
         {
             try
             {
+<<<<<<< HEAD
+                ChessMatch match = new ChessMatch();
+
+                while (!match.Finished)
+                {
+                    Console.Clear();
+                    Screen.PrintBoard(match.Brd);
+
+                    Console.WriteLine();
+                    Console.Write("Origin :");
+                    Position origin = Screen.ReadChessPosition().toPosition();
+                    Console.Write("Destiny:");
+                    Position destiny = Screen.ReadChessPosition().toPosition();
+
+                    match.ExecuteMove(origin, destiny);
+
+                }
+
+
+                Screen.PrintBoard(match.Brd);
+=======
                 ChessBoard brd = new ChessBoard(8, 8);
 
                 brd.PutPiece(new King(brd, Color.Black), new Position(0, 0));
@@ -21,6 +42,7 @@ namespace csharp_chess
 
 
                 Screen.PrintBoard(brd);
+>>>>>>> main
 
                 Console.ReadLine();
             }

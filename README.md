@@ -1,1 +1,1 @@
-# csharp-chess
+# C# Chess Game

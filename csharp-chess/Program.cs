@@ -22,6 +22,13 @@ namespace csharp_chess
                     Console.WriteLine();
                     Console.Write("Origin :");
                     Position origin = Screen.ReadChessPosition().toPosition();
+
+                    bool[,] possiblePositions = match.Brd.Piece(origin).PossibleMovements();
+
+                    Console.Clear();
+                    Screen.PrintBoard(match.Brd, possiblePositions);
+
+
                     Console.Write("Destiny:");
                     Position destiny = Screen.ReadChessPosition().toPosition();
 

@@ -1,4 +1,6 @@
-﻿namespace csharp_chess.Board
+﻿using Board;
+
+namespace csharp_chess.Board
 {
     class ChessBoard
     {
@@ -19,5 +21,10 @@
             return Pieces[line, colunm];
         }
 
+        public void PutPiece(Piece p, Position pos)
+        {
+            Pieces[pos.Line, pos.Colunm] = p;
+            p.Position = pos;
+        }
     }
 }

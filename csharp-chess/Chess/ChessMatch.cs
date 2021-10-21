@@ -11,8 +11,8 @@ namespace csharp_chess.Chess
     class ChessMatch
     {
         public ChessBoard Brd { get; private set; }
-        private int Turn;
-        private Color CurrentPlayer;
+        public int Turn { get; private set; }
+        public Color CurrentPlayer { get; private set; }
         public bool Finished { get; private set; }
 
         public ChessMatch()
@@ -30,6 +30,49 @@ namespace csharp_chess.Chess
             p.IncrementQntyMoves();
             Piece catchedPiece = Brd.CatchPiece(destiny);
             Brd.PutPiece(p, destiny);
+        }
+
+        public void ExecutePlay(Position origin, Position destiny)
+        {
+            ExecuteMove(origin, destiny);
+            Turn++;
+            SwitchPlayer();
+        }
+
+        public void ValidatingOriginPosition(Position pos)
+        {
+            if (Brd.Piece(pos) == null)
+            {
+                throw new BoardException("There is no chess piece in the origin position");
+            }
+            if (CurrentPlayer != Brd.Piece(pos).Color)
+            {
+                throw new BoardException("The origin selected chess piece isn't yours!");
+            }
+            if (!Brd.Piece(pos).HasPossibleMoves())
+            {
+                throw new BoardException("There's no possible moves for the selected chess piece");
+            }
+        }
+
+        public void ValidatingDestinyPosition(Position origin, Position destiny)
+        {
+            if (!Brd.Piece(origin).CanMoveTo(destiny))
+            {
+                throw new BoardException("Destiny position invalid!!");
+            }
+        }
+
+        private void SwitchPlayer()
+        {
+            if (CurrentPlayer == Color.White)
+            {
+                CurrentPlayer = Color.Black;
+            }
+            else
+            {
+                CurrentPlayer = Color.White;
+            }
         }
 
         private void putPieces()

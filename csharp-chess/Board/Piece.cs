@@ -22,6 +22,28 @@ namespace csharp_chess.Board
             QntyMoves++;
         }
 
+        public bool HasPossibleMoves()
+        {
+            bool[,] mat = PossibleMovements();
+            for (int i = 0; i < Brd.Lines; i++ )
+            {
+                for (int j = 0; j < Brd.Columns; j++)
+                {
+                    if (mat[i,j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool CanMoveTo(Position pos)
+        {
+            return PossibleMovements()[pos.Line, pos.Column];
+        }
+
+
         public abstract bool[,] PossibleMovements();
     }
 }

@@ -19,10 +19,7 @@ namespace csharp_chess
                     try 
                     {
                         Console.Clear();
-                        Screen.PrintBoard(match.Brd);
-                        Console.WriteLine();
-                        Console.WriteLine($"Turn: {match.Turn}");
-                        Console.WriteLine($"Waiting movement play: {match.CurrentPlayer}");
+                        Screen.PrintMatch(match);
 
                         Console.WriteLine();
                         Console.Write("Origin :");

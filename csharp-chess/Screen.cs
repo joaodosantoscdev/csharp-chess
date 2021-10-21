@@ -2,11 +2,45 @@
 using csharp_chess.Board;
 using csharp_chess.Chess;
 using System;
+using System.Collections.Generic;
 
 namespace csharp_chess
 {
     class Screen
     {
+        public static void PrintMatch(ChessMatch match)
+        {
+            PrintBoard(match.Brd);
+            PrintCatchedPieces(match);
+            Console.WriteLine();
+            Console.WriteLine($"Turn: {match.Turn}");
+            Console.WriteLine($"Waiting movement play: {match.CurrentPlayer}");
+        }
+
+        public static void PrintCatchedPieces(ChessMatch match)
+        {
+            Console.WriteLine("Catched pieces:");
+            Console.Write("White: ");
+            PrintGroup(match.CatchedPieces(Color.White));
+            Console.WriteLine();
+            Console.Write("Black: ");
+            ConsoleColor clr = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            PrintGroup(match.CatchedPieces(Color.Black));
+            Console.ForegroundColor = clr;
+            Console.WriteLine();
+        }
+
+        public static void PrintGroup(HashSet<Piece> group)
+        {
+            Console.Write("[");
+            foreach (Piece p in group)
+            {
+                Console.Write(p + " ");
+            }
+            Console.Write("]");
+        }
+
         public static void PrintBoard(ChessBoard brd)
         {
             for (int i = 0; i < brd.Lines; i++)

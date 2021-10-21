@@ -22,6 +22,11 @@ namespace csharp_chess.Board
             QntyMoves++;
         }
 
+        public void DecrementQntyMoves()
+        {
+            QntyMoves--;
+        }
+
         public bool HasPossibleMoves()
         {
             bool[,] mat = PossibleMovements();

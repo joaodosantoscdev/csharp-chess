@@ -14,7 +14,20 @@ namespace csharp_chess
             PrintCatchedPieces(match);
             Console.WriteLine();
             Console.WriteLine($"Turn: {match.Turn}");
-            Console.WriteLine($"Waiting movement play: {match.CurrentPlayer}");
+
+            if (!match.Finished)
+            {
+                Console.WriteLine($"Waiting movement play: {match.CurrentPlayer}");
+                if (match.Check)
+                {
+                    Console.WriteLine("CHECK !");
+                }
+            }
+            else 
+            {
+                Console.WriteLine("CHECKMATE !");
+                Console.WriteLine($"Vencedor: {match.CurrentPlayer}");
+            }
         }
 
         public static void PrintCatchedPieces(ChessMatch match)

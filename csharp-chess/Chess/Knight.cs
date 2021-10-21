@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace csharp_chess.Chess
 {
-    class King : Piece
+    class Knight : Piece
     {
-        public King(ChessBoard brd, Color color) 
-             : base(brd, color)
+        public Knight(ChessBoard brd, Color color)
+       : base(brd, color)
         {
         }
+
 
         private bool CanMove(Position pos)
         {
@@ -29,7 +30,7 @@ namespace csharp_chess.Chess
 
             //  Up
 
-            pos.DefineValues(Position.Line - 1, Position.Column);
+            pos.DefineValues(Position.Line - 1, Position.Column -2);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
@@ -37,7 +38,7 @@ namespace csharp_chess.Chess
 
             // North East
 
-            pos.DefineValues(Position.Line - 1, Position.Column + 1);
+            pos.DefineValues(Position.Line - 2, Position.Column - 1);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
@@ -45,7 +46,7 @@ namespace csharp_chess.Chess
 
             // Right
 
-            pos.DefineValues(Position.Line, Position.Column + 1);
+            pos.DefineValues(Position.Line - 2, Position.Column + 1);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
@@ -53,7 +54,7 @@ namespace csharp_chess.Chess
 
             // South East
 
-            pos.DefineValues(Position.Line + 1, Position.Column + 1);
+            pos.DefineValues(Position.Line - 1, Position.Column + 2);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
@@ -61,7 +62,7 @@ namespace csharp_chess.Chess
 
             // Down
 
-            pos.DefineValues(Position.Line + 1, Position.Column);
+            pos.DefineValues(Position.Line + 1, Position.Column + 2);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
@@ -69,7 +70,7 @@ namespace csharp_chess.Chess
 
             // South West
 
-            pos.DefineValues(Position.Line + 1, Position.Column - 1);
+            pos.DefineValues(Position.Line + 2, Position.Column + 1);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
@@ -77,7 +78,7 @@ namespace csharp_chess.Chess
 
             // Left
 
-            pos.DefineValues(Position.Line, Position.Column - 1);
+            pos.DefineValues(Position.Line + 2, Position.Column - 1);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
@@ -85,17 +86,17 @@ namespace csharp_chess.Chess
 
             // North West
 
-            pos.DefineValues(Position.Line - 1, Position.Column - 1);
+            pos.DefineValues(Position.Line + 1, Position.Column - 2);
             if (Brd.ValidPosition(pos) && CanMove(pos))
             {
                 mat[pos.Line, pos.Column] = true;
             }
             return mat;
         }
-
         public override string ToString()
         {
-            return "K";
+            return "N";
         }
+
     }
 }

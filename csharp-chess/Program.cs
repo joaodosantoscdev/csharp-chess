@@ -54,7 +54,7 @@ namespace csharp_chess
                 ChessBoard brd = new ChessBoard(8, 8);
 
                 brd.PutPiece(new King(brd, Color.Black), new Position(0, 0));
-                brd.PutPiece(new Tower(brd, Color.Black), new Position(1, 3));
+                brd.PutPiece(new Rook(brd, Color.Black), new Position(1, 3));
                 brd.PutPiece(new King(brd, Color.Black), new Position(0, 2));
 
                 brd.PutPiece(new King(brd, Color.White), new Position(3, 5));

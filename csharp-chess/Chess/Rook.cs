@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace csharp_chess.Chess
 {
-    class Tower : Piece
+    class Rook : Piece
     {
-        public Tower(ChessBoard brd, Color color)
+        public Rook(ChessBoard brd, Color color)
      : base(brd, color)
         {
         }
@@ -73,7 +73,7 @@ namespace csharp_chess.Chess
 
         public override string ToString()
         {
-            return "T";
+            return "R";
         }
     }
 }

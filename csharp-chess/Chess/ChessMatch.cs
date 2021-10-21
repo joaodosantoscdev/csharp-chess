@@ -229,7 +229,7 @@ namespace csharp_chess.Chess
 
         private void putPieces()
         {
-<<<<<<< HEAD
+
             PutNewPiece('a', 1, new Rook(Brd, Color.White));
             PutNewPiece('b', 1, new Knight(Brd, Color.White));
             PutNewPiece('c', 1, new Bishop(Brd, Color.White));
@@ -263,14 +263,6 @@ namespace csharp_chess.Chess
             PutNewPiece('f', 7, new Pawn(Brd, Color.Black));
             PutNewPiece('g', 7, new Pawn(Brd, Color.Black));
             PutNewPiece('h', 7, new Pawn(Brd, Color.Black));
-=======
-            PutNewPiece('c', 1, new Tower(Brd, Color.White));
-            PutNewPiece('d', 2, new King(Brd, Color.White));
-            PutNewPiece('h', 7, new Tower(Brd, Color.White));
-
-            PutNewPiece('a', 8, new King(Brd, Color.Black));
-            PutNewPiece('b', 8, new Tower(Brd, Color.Black));
->>>>>>> main
         }
     }
 }

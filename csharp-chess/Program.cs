@@ -49,7 +49,7 @@ namespace csharp_chess
                     Screen.PrintMatch(match);
 
                 }
-<<<<<<< HEAD
+
 
 
                 Screen.PrintBoard(match.Brd);
@@ -67,8 +67,7 @@ namespace csharp_chess
 
 
                 Console.ReadLine();
-=======
->>>>>>> main
+
             }
             catch (BoardException e)
             {

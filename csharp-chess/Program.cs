@@ -45,8 +45,11 @@ namespace csharp_chess
                         Console.WriteLine("-----PRESS ENTER-----");
                         Console.ReadLine();
                     }
+                    Console.Clear();
+                    Screen.PrintMatch(match);
 
                 }
+<<<<<<< HEAD
 
 
                 Screen.PrintBoard(match.Brd);
@@ -64,12 +67,14 @@ namespace csharp_chess
 
 
                 Console.ReadLine();
+=======
+>>>>>>> main
             }
             catch (BoardException e)
             {
                 Console.WriteLine(e.Message);
             }
-
+            Console.ReadLine();
         }
     }
 }

@@ -16,7 +16,7 @@
 <img src="imgs/img-4.jpg"></img>
 <br>
 <h3>Overview ⮯</h3>
-<p>This is a Chess game that you can play in your console, with all the code writted 100% in C#, to play it you just have to input the origin of the chesspiece based on the  square coordinate, and your output/destiny, that will be the square you want to move into. To run it, you just need to have VS installed !</p>
+<p>This is a Chess game that you can play in your console, with all the code writted 100% in C#, to play it you just have to input the origin of the chesspiece based on the  square coordinate, and your output/destiny, that will be the square you want to move into.</p>
 
 <h3>How to run ⮯</h3>
 <p>** To run it, you just need to have VS installed !**</p>

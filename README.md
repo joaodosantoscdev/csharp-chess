@@ -4,7 +4,7 @@
 <hr>
 <h3>➡️This project was developed using <strong>C#</strong> 🛠️</h3>
 <p>➡️Developed during C# OOP classes.</p>
-<h3>Images</h3>
+<h3>Images :chess_pawn:</h3>
 <hr>
 <img src="imgs/img-1.JPG"></img>
 <br>

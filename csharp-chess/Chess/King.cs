@@ -10,15 +10,24 @@ namespace csharp_chess.Chess
 {
     class King : Piece
     {
-        public King(ChessBoard brd, Color color) 
+        private ChessMatch Match;
+
+        public King(ChessBoard brd, Color color, ChessMatch match) 
              : base(brd, color)
         {
+            Match = match;
         }
 
         private bool CanMove(Position pos)
         {
             Piece p = Brd.Piece(pos);
             return p == null || p.Color != Color;
+        }
+
+        private bool TestRookToCastleKingSide(Position pos)
+        {
+            Piece p = Brd.Piece(pos);
+            return p != null && p is Rook && p.Color == Color && p.QntyMoves == 0;
         }
 
         public override bool[,] PossibleMovements()
@@ -90,6 +99,43 @@ namespace csharp_chess.Chess
             {
                 mat[pos.Line, pos.Column] = true;
             }
+
+           
+
+            if (QntyMoves == 0 && !Match.Check)
+            {
+                Position posT1 = new Position(Position.Line, Position.Column + 3);
+                if (TestRookToCastleKingSide(posT1))
+                {
+
+                    // SPECIAL PLAY CASTLE-KINGSIDE
+
+                    Position p1 = new Position(Position.Line, Position.Column + 1);
+                    Position p2 = new Position(Position.Line, Position.Column + 2);
+                    if (Brd.Piece(p1) == null && Brd.Piece(p2) == null)
+                    {
+                        mat[Position.Line, Position.Column + 2] = true;
+                    }
+                }
+
+                // SPECIAL PLAY CASTLE-QUEENSIDE
+
+                Position posT2 = new Position(Position.Line, Position.Column - 4);
+                if (TestRookToCastleKingSide(posT2))
+                {
+                    Position p1 = new Position(Position.Line, Position.Column - 1);
+                    Position p2 = new Position(Position.Line, Position.Column - 2);
+                    Position p3 = new Position(Position.Line, Position.Column - 3);
+                    if (Brd.Piece(p1) == null && Brd.Piece(p2) == null && Brd.Piece(p3) == null)
+                    {
+                        mat[Position.Line, Position.Column - 2] = true;
+                    }
+                }
+            }
+
+           
+
+
             return mat;
         }
 

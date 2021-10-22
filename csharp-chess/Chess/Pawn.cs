@@ -10,9 +10,13 @@ namespace csharp_chess.Chess
 {
     class Pawn : Piece
     {
-        public Pawn(ChessBoard brd, Color color)
+
+        private ChessMatch Match;
+
+        public Pawn(ChessBoard brd, Color color, ChessMatch match)
              : base(brd, color)
         {
+            Match = match;
         }
 
         private bool HasEnemy(Position pos)
@@ -57,6 +61,24 @@ namespace csharp_chess.Chess
                 {
                     mat[pos.Line, pos.Column] = true;
                 }
+
+                // SPECIAL PLAY EN-PASSANT
+
+                if (Position.Line == 3 )
+                {
+                    Position left = new Position(Position.Line, Position.Column - 1);
+                    if (Brd.ValidPosition(left) && HasEnemy(left) && Brd.Piece(left) == Match.VulnerableEnPassant)
+                    {
+                        mat[left.Line - 1, left.Column] = true;
+                    }
+
+                    Position right = new Position(Position.Line, Position.Column + 1);
+                    if (Brd.ValidPosition(right) && HasEnemy(right) && Brd.Piece(right) == Match.VulnerableEnPassant)
+                    {
+                        mat[right.Line - 1, right.Column] = true;
+                    }
+                }
+
             } 
             else
             {
@@ -83,6 +105,22 @@ namespace csharp_chess.Chess
                 {
                     mat[pos.Line, pos.Column] = true;
                 }
+
+                if (Position.Line == 4)
+                {
+                    Position left = new Position(Position.Line, Position.Column - 1);
+                    if (Brd.ValidPosition(left) && HasEnemy(left) && Brd.Piece(left) == Match.VulnerableEnPassant)
+                    {
+                        mat[left.Line + 1, left.Column] = true;
+                    }
+
+                    Position right = new Position(Position.Line, Position.Column + 1);
+                    if (Brd.ValidPosition(right) && HasEnemy(right) && Brd.Piece(right) == Match.VulnerableEnPassant)
+                    {
+                        mat[right.Line + 1, right.Column] = true;
+                    }
+                }
+
             }
             return mat;
         }

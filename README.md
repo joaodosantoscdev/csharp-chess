@@ -7,13 +7,13 @@
 <h3>Images :chess_pawn:</h3>
 <hr>
 <div style="display: inline_block">
-<img allign="center" height="300px" src="imgs/img-1.JPG"></img>
+<img allign="center" height="500px" src="imgs/img-1.JPG"></img>
 <br>
-<img allign="center" height="300px" src="imgs/img-2.JPG"></img>
+<img allign="center" height="500px" src="imgs/img-2.JPG"></img>
 <br>
-<img allign="center" height="300px" src="imgs/img-3.JPG"></img>
+<img allign="center" height="500px" src="imgs/img-3.JPG"></img>
 <br>
-<img allign="center" height="300px" src="imgs/img-4.JPG"></img>
+<img allign="center" height="500px" src="imgs/img-4.JPG"></img>
 </div>
 <br>
 <h3>Overview ⮯</h3>

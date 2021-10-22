@@ -6,7 +6,7 @@
 <p>➡️Developed during C# OOP classes.</p>
 <h3>Images :chess_pawn:</h3>
 <hr>
-<div>
+<div style="display: inline-block">
 <img height="120px" src="imgs/img-1.JPG"></img>
 <br>
 <img height="120px" src="imgs/img-2.JPG"></img>
